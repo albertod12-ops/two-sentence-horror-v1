@@ -22,6 +22,8 @@ def main():
     with open(path, "w", encoding="utf-8") as f:
         f.write(STORY)
     os.chmod(path, 0o644)
+    with open(path, encoding="utf-8") as f:
+        assert f.read() == STORY, "written entry differs from STORY"
 
 
 if __name__ == "__main__":
